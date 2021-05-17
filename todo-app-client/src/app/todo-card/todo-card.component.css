@@ -1,0 +1,53 @@
+mat-form-field{
+    width:500px;
+    height: auto;
+}
+
+button{
+    height:50px;
+    margin-top: 5px;
+    
+
+}
+
+mat-card{
+    width: 750px;
+    align-items: center;
+    margin: 0 auto; 
+}
+
+.card-content {
+    word-wrap: break-word;
+}
+
+.edit
+{
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    width:500px;
+    cursor:default;  
+}
+
+.strikeThrough{
+   text-decoration: line-through;
+}
+
+.scrollable-content {
+    overflow: auto;
+    height: 350px;
+    position: relative;
+    
+}
+  
+.tab-content {
+    position: absolute;
+}
+  
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<div class="container">
+
+<!--Form to add a new Todo-->
+
+  <div>
+     <mat-card class="mt-3">
+
+      <form [formGroup] = "todoForm"  style="display: flex;justify-content: center;">
+        <mat-form-field appearance="outline"  style="justify-content: center;">
+          <mat-label>Todo</mat-label>
+          <input matInput formControlName="todoNote" >
+        </mat-form-field>
+        <button mat-raised-button color="warn" (click)="addTodo()"><mat-icon>loupe</mat-icon>&nbsp;Add Todo</button>
+    </form>
+  
+  </mat-card>
+</div>
+
+<!--Card to display Todos-->
+
+  <div>
+    <mat-card class="mt-3 text-center">
+
+      <!--Tab to display all Todos-->
+
+      <mat-tab-group mat-align-tabs="center" class="scrollable-content">  
+        <mat-tab label="All Todos" class="tab-content">
+
+        <div *ngFor="let todo of todos; let i = index" class="text-center">
+          <mat-card class="mt-1" style="height:60px;width:650px">
+            <mat-card-content style="text-align: start;">
+
+              <span  *ngIf="!editTodo">
+                <mat-checkbox color="primary"
+                (change)="completeTodo($event,todo,i)"></mat-checkbox>
+                &nbsp;
+  
+                      <span class="card-content">{{todo.todoNote}}
+                      <span class="float-right">
+                        <button mat-icon-button  color="warn" (click)="editToggle(i)">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button  color="warn" (click)="delete(todo.id)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </span></span>
+              </span>
+             
+              <span  *ngIf="editTodo">
+                <input [(ngModel)]="todo.todoNote" class="edit" >
+                <span class="float-right"  *ngIf="selectedIndex==i && editTodo">
+                  <button mat-icon-button  color="warn" (click)="updateTodo(todo,i)">
+                    <mat-icon>check</mat-icon>
+                  </button>
+                  <button mat-icon-button  color="warn" (click)="editToggle(i)">
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </span>
+              </span>
+              
+            </mat-card-content>
+          </mat-card>
+        
+        </div>
+    </mat-tab>
+
+    <!--Tab to display completed Todos-->
+
+     <mat-tab label="Completed Todos">
+       <div *ngFor="let todo of completedTodos">
+      <mat-card class="mt-1" style="height:60px;width:650px">
+        <mat-card-content style="text-align: start;" class="strikeThrough">
+         &nbsp;
+          <span class="card-content">
+            {{todo.todoNote}}
+          </span>
+          <span class="float-right">
+            <button mat-icon-button  (click)="delete(todo.id)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+         
+        </mat-card-content>
+      </mat-card>
+     </div>
+    </mat-tab>     
+  </mat-tab-group>
+<mat-card-footer>
+  <p class="mb-3">Total Todos : {{countTodo}}</p>
+</mat-card-footer>
+  
+</mat-card>
+</div>
+</div>

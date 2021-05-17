@@ -1,0 +1,42 @@
+<!--Sign up Form-->
+<div class="container">
+    <mat-card class="mt-5">
+        <mat-card-title class="text-center pt-1 pb-1">Signup Please</mat-card-title>
+        <form  [formGroup]='registerForm' (ngSubmit)="register()">
+             <!--Name-->
+            <div class="row">
+                <div class="col-12 text-center mt-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your Name</mat-label>
+                        <input matInput formControlName="Username" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!--Password-->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <mat-form-field appearance="fill">
+
+                        <mat-label>Enter your Password</mat-label>
+                        <input matInput formControlName="Password" required>
+
+                        <!-- <mat-error *ngIf="registerForm.controls.password.touched">
+                            <span *ngIf="registerForm.controls.password.errors.required">This field is mandatory.</span>
+                            <span *ngIf="registerForm.controls.password.length()<4 && registerForm.controls.password.length()>8">Minimum length must be 4 & Maximum length must be 8 characters.</span>
+
+                          </mat-error> -->
+                          
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <button mat-raised-button class="btn-success" type="submit">SIGN UP</button>&nbsp;&nbsp;
+                <button mat-raised-button class="btn-success" type="button" (click)="cancel()">RESET</button>
+            </div>
+        </form>
+    </mat-card>
+
+
+</div>

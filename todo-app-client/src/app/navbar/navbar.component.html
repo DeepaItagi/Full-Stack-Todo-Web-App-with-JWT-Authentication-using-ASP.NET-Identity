@@ -1,0 +1,34 @@
+<!--Navigation Bar-->
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-success ">
+    <a class="navbar-brand" routerLink='/'>
+      <strong>TODO APP</strong>
+    </a>
+
+    <div class="navbar-collapse">
+        <div class="navbar-nav ml-auto">
+
+        <a *ngIf="(accountService.currentUser$ | async) === null"
+        class="nav-item nav-link text-white"
+        routerLinkActivate="active"
+        routerLink='/signup'><strong>Signup</strong></a>
+
+        <a  *ngIf="(accountService.currentUser$ | async) === null"
+        class="nav-item nav-link text-white"
+        routerLinkActivate="active"
+        routerLink='/login'
+        ><strong>Login</strong></a>
+
+        <span  *ngIf="(accountService.currentUser$ | async) as user"
+        class="nav-item nav-link text-white">
+         <strong>Welcome {{user.username}}</strong>
+        </span>
+
+        <a  *ngIf="(accountService.currentUser$ | async)"
+        class="nav-item nav-link text-white" 
+        style="cursor: pointer;" 
+        (click)="logout()"><strong>Logout</strong></a>
+    </div>
+</div>
+</nav>
+</div>
