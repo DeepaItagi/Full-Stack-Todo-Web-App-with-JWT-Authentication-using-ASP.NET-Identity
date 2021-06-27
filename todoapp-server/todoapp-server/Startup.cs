@@ -47,9 +47,7 @@ namespace todoapp_server
             });
             
 
-            var sqlConnectionString = "Server=localhost;Port=5432;User Id=postgres;Password=*****;Database=Todo;";
-
-            services.AddDbContext<PostgreSqlContext>(options => options.UseNpgsql(sqlConnectionString));
+            services.AddDbContext<PostgreSqlContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Database")));
 
             services.AddScoped<ITokenService, TokenService>();
 
