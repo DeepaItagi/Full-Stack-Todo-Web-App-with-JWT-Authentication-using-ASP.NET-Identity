@@ -27,27 +27,27 @@
         <mat-tab label="All Todos" class="tab-content">
 
         <div *ngFor="let todo of todos; let i = index" class="text-center">
-          <mat-card class="mt-1" style="height:60px;width:650px">
+          <mat-card class="mt-1 mb-1" style="width:650px">
             <mat-card-content style="text-align: start;">
 
-              <span  *ngIf="!editTodo">
-                <mat-checkbox color="primary"
-                (change)="completeTodo($event,todo,i)"></mat-checkbox>
-                &nbsp;
-  
-                      <span class="card-content">{{todo.todoNote}}
-                      <span class="float-right">
-                        <button mat-icon-button  color="warn" (click)="editToggle(i)">
-                          <mat-icon>edit</mat-icon>
-                        </button>
-                        <button mat-icon-button  color="warn" (click)="delete(todo.id)">
-                          <mat-icon>delete</mat-icon>
-                        </button>
-                      </span></span>
-              </span>
+              <div  *ngIf="!editTodo">
+                     
+                <span style="float:right">
+                  <button mat-icon-button  color="warn" (click)="editToggle(i)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button  color="warn" (click)="delete(todo.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </span>
+                <span><mat-checkbox color="primary"
+                  (change)="completeTodo($event,todo,i)"></mat-checkbox></span>
+                  &nbsp;
+                  <span class="card-content">{{todo.todoNote}}</span>
+                </div>
              
-              <span  *ngIf="editTodo">
-                <input [(ngModel)]="todo.todoNote" class="edit" >
+              <div  *ngIf="editTodo">
+                
                 <span class="float-right"  *ngIf="selectedIndex==i && editTodo">
                   <button mat-icon-button  color="warn" (click)="updateTodo(todo,i)">
                     <mat-icon>check</mat-icon>
@@ -56,7 +56,8 @@
                     <mat-icon>cancel</mat-icon>
                   </button>
                 </span>
-              </span>
+                <span><textarea  [(ngModel)]="todo.todoNote" class="edit blinking-cursor"></textarea></span>
+              </div>
               
             </mat-card-content>
           </mat-card>
@@ -68,17 +69,18 @@
 
      <mat-tab label="Completed Todos">
        <div *ngFor="let todo of completedTodos">
-      <mat-card class="mt-1" style="height:60px;width:650px">
+      <mat-card class="mt-1 mb-1" style="width:650px">
         <mat-card-content style="text-align: start;" class="strikeThrough">
          &nbsp;
+         <span class="float-right">
+          <button mat-icon-button  (click)="delete(todo.id)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </span>
           <span class="card-content">
             {{todo.todoNote}}
           </span>
-          <span class="float-right">
-            <button mat-icon-button  (click)="delete(todo.id)" color="warn">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </span>
+          
          
         </mat-card-content>
       </mat-card>

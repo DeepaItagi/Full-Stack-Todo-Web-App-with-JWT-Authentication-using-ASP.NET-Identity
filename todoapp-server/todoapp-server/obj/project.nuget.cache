@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fSKZBCUNza1DzuLLtIFVKdgEcs7eA1uJH0ik11JyJ+uQn1ZHw1p2NbRToUdVeC/vVIEBQQRWeSpqOKcvQfaV7A==",
+  "dgSpecHash": "WkZNBAp3G4yMaoQ3uAdUMbPUKKsP5dnaSWS/iGxFaTWL7YDcVXmHtFpXm+IoNtKEC8s5w1dO4scX1zDdAJ1opA==",
   "success": true,
-  "projectFilePath": "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
+  "projectFilePath": "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

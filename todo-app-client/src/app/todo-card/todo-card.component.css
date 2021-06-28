@@ -24,10 +24,19 @@ mat-card{
 {
     border: none;
     outline: none;
-    word-wrap: break-word;
     width:500px;
-    cursor:default;  
+    resize: none; 
+    overflow: hidden;
 }
+.blinking-cursor {
+    
+    
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
 
 .strikeThrough{
    text-decoration: line-through;
@@ -43,6 +52,8 @@ mat-card{
 .tab-content {
     position: absolute;
 }
+
+
   
 
 

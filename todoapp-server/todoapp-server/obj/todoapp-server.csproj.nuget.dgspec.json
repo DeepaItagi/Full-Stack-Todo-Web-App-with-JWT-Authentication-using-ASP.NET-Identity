@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj": {}
+    "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj": {}
   },
   "projects": {
-    "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj": {
+    "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
+        "projectUniqueName": "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
         "projectName": "todoapp-server",
-        "projectPath": "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
+        "projectPath": "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\todoapp-server.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\Angular Projects\\TODO APP\\todoapp-server\\todoapp-server\\obj\\",
+        "outputPath": "E:\\Angular Projects\\TODO-APP\\todoapp-server\\todoapp-server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
